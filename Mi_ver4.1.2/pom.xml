@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.peisia</groupId>
+	<artifactId>spring</artifactId>
+	<name>Mi005</name>
+	<packaging>war</packaging>
+	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<properties>
+<!-- 		<java-version>1.6</java-version> -->
+		<java-version>11</java-version> <!-- 내가 자바 버전수정한 것(1/7) -->
+		
+<!-- 		<org.springframework-version>3.1.1.RELEASE</org.springframework-version> -->
+		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+		<!-- 내가 스프링버전 수정한 것 (2/7) -->
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+	<dependencies>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				 </exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+				
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>	
+		
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+<!-- 			<version>1.2.15</version> -->
+			<version>1.2.17</version>
+			<!-- 내가 버전 수정 (7/7) -->
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+<!-- 			<scope>runtime</scope> -->
+		</dependency>
+
+		<!-- @Inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+				
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+<!-- 			<artifactId>servlet-api</artifactId> -->
+			<artifactId>javax.servlet-api</artifactId>
+			<!-- servlet를 javax.servlet로 변경 (6-1/7) -->
+<!-- 			<version>2.5</version> -->
+			<version>3.1.0</version>
+			<!-- 버전2.5를 버전 3.1.0으로 수정 (6-2/7) -->
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+	
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+<!-- 			<version>4.7</version> -->
+			<version>4.12</version>
+			<!-- 내가 junit 버전을 수정 (5/7) -->
+			<scope>test</scope>
+		</dependency>
+		      
+	<!-- 내가 추가(1/8) -->	
+		<!-- spring-tx -->	
+		<dependency>	
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>		      
+		      
+	<!-- 내가 추가(2/n) -->
+		<!-- spring-jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		
+	<!-- 내가 추가(3/8) --> 
+		<!-- spring-test -->	
+		<dependency>	
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>			
+		
+	<!-- 내가 추가(4/8) -->
+		<!-- 커넥션 풀 - 아파치 - Commons DBCP 2.8.0 -->
+		<dependency>	
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.8.0</version>
+		</dependency>	
+		
+	<!-- 내가 추가(5/8) -->
+		<!-- mybatis -->	
+		<dependency>	
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.4.6</version>
+		</dependency>
+		
+	<!-- 내가 추가(6/8) -->	
+		<!-- mybatis - spring -->	
+		<dependency>	
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		
+	<!-- 내가 추가(7/8) -->	
+		<!-- log4jdbc-log4j2 -->	
+		<dependency>	
+			<groupId>org.bgee.log4jdbc-log4j2</groupId>
+			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+			<version>1.16</version>
+		</dependency>
+		
+	<!-- 내가 추가(8/8) -->
+		<!-- 롬복 -->		
+		<dependency>		
+			<groupId>org.projectlombok</groupId>	
+			<artifactId>lombok</artifactId>	
+			<version>1.18.0</version>	
+			<scope>provided</scope>	
+		</dependency>
+		      <!-- gson 라이브러리 -->					
+<!-- JSON 라이브러리 - GSON (구글꺼) -->					
+<dependency>					
+	<groupId>com.google.code.gson</groupId>				
+	<artifactId>gson</artifactId>				
+	<version>2.8.6</version>				
+</dependency>					
+		        
+		        <!-- jlayer 추가 -->
+		 <dependency>
+			<groupId>javazoom</groupId>
+			<artifactId>jlayer</artifactId>
+			<version>1.0.1</version>
+		</dependency>       
+		        
+	</dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <additionalProjectnatures>
+                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                    </additionalProjectnatures>
+                    <additionalBuildcommands>
+                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+                    </additionalBuildcommands>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+<!--                     <source>1.6</source> -->
+<!--                     <target>1.6</target> -->
+                    <source>11</source>
+                    <target>11</target>
+                    <!-- source와 target를 자바 11버전으로 수정 (3,4/7) -->
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>org.test.int1.Main</mainClass>
+                </configuration>
+            </plugin>
+            
+            <!-- awt가 import안되서 넣어보는것 -->
+            <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <failIfNoTests>false</failIfNoTests>
+            <testFailureIgnore>${master_unitTest_failureIgnore}</testFailureIgnore>
+            <skipTests>${master_unitTest_skip}</skipTests>
+            <trimStackTrace>false</trimStackTrace>
+            <!-- inject debug arguments (triggered by system property debugTests from jenkins) -->
+            <argLine>${master_test_argLine}</argLine>
+            <systemPropertyVariables>
+              <sun.jnu.encoding>${project.build.sourceEncoding}</sun.jnu.encoding>
+              <java.awt.headless>true</java.awt.headless>
+              <java.util.logging.SimpleFormatter.format>%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n</java.util.logging.SimpleFormatter.format>
+              <!-- Inherit proxy settings of parent process when forking -->
+              <http.proxyHost>${http.proxyHost}</http.proxyHost>
+              <http.proxyPort>${http.proxyPort}</http.proxyPort>
+              <http.nonProxyHosts>${http.nonProxyHosts}</http.nonProxyHosts>
+              <https.proxyHost>${https.proxyHost}</https.proxyHost>
+              <https.proxyPort>${https.proxyPort}</https.proxyPort>
+              <ftp.proxyHost>${ftp.proxyHost}</ftp.proxyHost>
+              <ftp.proxyPort>${ftp.proxyPort}</ftp.proxyPort>
+              <ftp.nonProxyHosts>${ftp.nonProxyHosts}</ftp.nonProxyHosts>
+            </systemPropertyVariables>
+            <runOrder>${master_test_runOrder}</runOrder>
+            <forkCount>${master_test_forkCount}</forkCount>
+            <reuseForks>${master_test_reuseVm}</reuseForks>
+            <forkedProcessTimeoutInSeconds>${master_test_timeout}</forkedProcessTimeoutInSeconds>
+            <useManifestOnlyJar>false</useManifestOnlyJar>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <configuration>
+            <failIfNoTests>false</failIfNoTests>
+            <testFailureIgnore>${master_unitTest_failureIgnore}</testFailureIgnore>
+            <skipTests>${master_unitTest_skip}</skipTests>
+            <!-- inject debug arguments (triggered by system property debugTests from jenkins) -->
+            <argLine>${master_test_argLine}</argLine>
+            <systemPropertyVariables>
+              <sun.jnu.encoding>${project.build.sourceEncoding}</sun.jnu.encoding>
+              <java.awt.headless>true</java.awt.headless>
+              <java.util.logging.SimpleFormatter.format>%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$s %5$s%6$s%n</java.util.logging.SimpleFormatter.format>
+            </systemPropertyVariables>
+            <runOrder>${master_test_runOrder}</runOrder>
+            <!-- failsafe must be forked into its own process in order to enable jacoco's java agent -->
+            <forkCount>${master_test_forkCount}</forkCount>
+            <reuseForks>${master_test_reuseVm}</reuseForks>
+            <forkedProcessTimeoutInSeconds>${master_test_timeout}</forkedProcessTimeoutInSeconds>
+            <useManifestOnlyJar>false</useManifestOnlyJar>
+          </configuration>
+        </plugin>
+            <!-- import가 안되서 넣어보는 것 -->
+        </plugins>
+    </build>
+    
+</project>

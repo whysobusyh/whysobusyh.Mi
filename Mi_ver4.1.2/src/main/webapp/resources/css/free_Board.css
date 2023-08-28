@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+#f_Layout1{
+	background-color: orange;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	margin:auto;
+	
+}
+
+.f_leader {
+  background-color: purple;
+  display: grid;
+  grid-template-columns : 1fr 3fr 1fr 1fr 1fr 1fr ;
+}
+
+.f_items{
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+

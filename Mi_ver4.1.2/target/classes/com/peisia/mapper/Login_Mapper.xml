@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="com.peisia.mapper.Login_Mapper">
+		<select id="login_Test" resultType="com.peisia.spring.dto.Login_Dto">
+			select count(*) as login_Test, c_Nickname from login_Table where c_ID = #{submit_ID} and c_PW = #{submit_PW} group by c_Nickname
+<!-- 			select count(*) as login_Test, c_Nickname from login_Table where c_ID = #{id} and c_PW = #{pw} group by c_Nickname -->
+						
+		</select>
+		
+		
+		
+	</mapper>
